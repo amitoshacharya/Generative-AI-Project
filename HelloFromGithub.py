@@ -1,5 +1,5 @@
 def HelloFromGitHub(name:str):
-    text = f"Hello {name}, hope you are doing good.\n"
+    text = f"\nHello {name}, hope you are doing good.\n"
     text += "I'm GitHub, who welcomes you in my Codespace feature. \nHope you have a great experience."
     return text
 
