@@ -3,3 +3,14 @@ Python File: app.py
 Description: This WebAPI is an user interactive (UI) interface 
              which connect frontend users to backened processing LLM.
 --
+
+
+
+
+ABBREVIATIONS
+Functionality
+WebAPI
+Pages
+Backend Functions
+- Private Variable (Not for frontend user)
++ Public Variable (For frontend user)
