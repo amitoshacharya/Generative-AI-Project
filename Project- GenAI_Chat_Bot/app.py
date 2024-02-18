@@ -1,3 +1,9 @@
-from config import config
+from SearchService import chat_bot_response
+from warnings import filterwarnings
 
-print(config)
+
+filterwarnings('ignore')
+print(chat_bot_response("Introduce yourself please."))
+while True:
+    query = input("What do you want to know? ")
+    print(chat_bot_response(query))

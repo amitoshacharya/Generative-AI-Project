@@ -11,9 +11,12 @@
             - *Streamlit multipages WebAPI.*
             - *This WebAPI is an interactive user interface (UI) which connect frontend users to backened processing Large Language Model (LLM).*
 
+    - ### SearchService
+    
+
 - ## **Execution Steps**
     - ### **Open GitHub Codespace**
-        - *Click on code<>*
+        - *Click on "<> code"*
         - *Click on codespace.*
         - *Click on created codespace to open and proceed.*
     - ### **Creating Virtual Environment .venv**

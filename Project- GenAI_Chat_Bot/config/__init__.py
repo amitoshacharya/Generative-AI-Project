@@ -1,6 +1,7 @@
 """
 This file Contains configuration of secrets keys.
-To use this module, import in other modules using: from config import config
+To use this module, import in other modules using: 
+    from config import config
 """
 import os
 from dotenv import load_dotenv
