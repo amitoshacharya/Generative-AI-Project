@@ -1,0 +1,5 @@
+WebAPI
+Python File: app.py 
+Description: This WebAPI is an user interactive (UI) interface 
+             which connect frontend users to backened processing LLM.
+--
