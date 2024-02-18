@@ -11,7 +11,14 @@
             - *Streamlit multipages WebAPI.*
             - *This WebAPI is an interactive user interface (UI) which connect frontend users to backened processing Large Language Model (LLM).*
 
-    - ### SearchService
+    - ### **Chat Bot**
+        - *SearchService*
+            - *This is a backened functions that search for the response to user's asked queries.*
+
+    - **utils**
+        - *prompt_template.py*
+            - *This is a backened functions that sets-up prompts for LLM model.*
+
     
 
 - ## **Execution Steps**
