@@ -9,4 +9,29 @@
     - ### **Streamlit APIs**
         - *app.py*
             - *Streamlit multipages WebAPI.*
-            - *This WebAPI is an user interactive (UI) interface which connect frontend users to backened processing LLM.*
+            - *This WebAPI is an interactive user interface (UI) which connect frontend users to backened processing Large Language Mode (LLM).*
+
+- ## **Execution Steps**
+    - ### **Open GitHub Codespace**
+        - *Click on code<>*
+        - *Click on codespace.*
+        - *Click on created codespace to open and proceed.*
+    - ### **Creating Virtual Environment .venv**
+        > python -m venv /designated_path
+    - ### **Activating Environment**
+        > source ./venv/bin/activate
+    - ### **De-Activating Environment**
+        > deactivate
+    - ### **Entering To Project- GenAI_Chat_Bot**
+        > cd "./Project- GenAI_Chat_Bot"
+    - ### **Install Requirements**
+        > pip install -r requirements.txt
+    - ### **Creating Modules**
+        - Add a folder and name it. For example: xyz
+        - open terminal and type command to generate *\__init__.py*
+            > *touch xyz/\__init__.py*
+        - Now we can import xyz module in *app.py*
+            > *import xyx*
+        
+    
+

@@ -1,0 +1,11 @@
+beautifulsoup4
+nltk
+numpy
+openai
+pandas
+pypdf
+python-dotenv
+regex
+requests
+streamlit
+touch
