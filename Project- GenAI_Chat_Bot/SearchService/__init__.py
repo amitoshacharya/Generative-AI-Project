@@ -5,7 +5,7 @@ This function uses LLM to process user query and generate responses.
 import os
 import random
 from config import config
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from utils import chat_response_template
 

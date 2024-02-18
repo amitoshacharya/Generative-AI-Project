@@ -6,4 +6,5 @@ filterwarnings('ignore')
 print(chat_bot_response("Introduce yourself please."))
 while True:
     query = input("What do you want to know? ")
-    print(chat_bot_response(query))
+    ai_response = chat_bot_response(query)
+    print(ai_response)
