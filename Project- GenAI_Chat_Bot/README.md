@@ -9,7 +9,7 @@
     - ### **Streamlit APIs**
         - *app.py*
             - *Streamlit multipages WebAPI.*
-            - *This WebAPI is an interactive user interface (UI) which connect frontend users to backened processing Large Language Mode (LLM).*
+            - *This WebAPI is an interactive user interface (UI) which connect frontend users to backened processing Large Language Model (LLM).*
 
 - ## **Execution Steps**
     - ### **Open GitHub Codespace**
