@@ -2,8 +2,7 @@
 This function uses LLM to process user query and generate responses.
 """
 
-import os
-import random
+import sys
 from config import config
 from langchain_community.chat_models import ChatOpenAI, AzureChatOpenAI
 from langchain.chains import LLMChain
@@ -16,7 +15,7 @@ def chat_bot(env:str= 'local'):
     if env == "local":
         bot_llm = ChatOpenAI(
         model = 'gpt-3.5-turbo',
-        openai_api_key = config['OPEN_API_KEY'],
+        openai_api_key = config['OPENAI_API_KEY'],
         temperature = 0.6,
         max_tokens = 150
         )
@@ -36,10 +35,12 @@ def chat_bot(env:str= 'local'):
     
     else:
         print(f"{env} is not a valid environment. Please check and verify.")
+        bot_llm = None
+        sys.exit()
 
     return bot_llm
 
-def chat_bot_response(user_query:str, env:str= 'local'):
+def chat_bot_response(name:str=None, user_query:str= None, env:str= 'local'):
     """
     This function creates a chain using llm model and prompt template. 
 
@@ -51,6 +52,10 @@ def chat_bot_response(user_query:str, env:str= 'local'):
     bot_llm = chat_bot(env)
     response_prompt = chat_response_template()
     response_chain = LLMChain(llm = bot_llm, prompt = response_prompt)
-    assistant_names = ['Chandler Bing', 'Joey Tribbiani', 'Ross Geller', 'Rachel Green', 'Monica Geller', 'Phoebe Buffay']
-    response = response_chain.run({'name':random.choice(assistant_names), 'query': user_query})
+    if name is None:
+        assistant_name = "Randchod Das"
+    else:
+        assistant_name = name
+
+    response = response_chain.run({'name':assistant_name, 'query': user_query})
     return response

@@ -1,13 +1,15 @@
 from SearchService import chat_bot_response
+import random
 from warnings import filterwarnings
-
-global ENV 
+filterwarnings('ignore')
 
 ENV = 'azure' ## azure or local
-filterwarnings('ignore')
-print(chat_bot_response("Introduce yourself please.", ENV))
+assistant_names = ['Chandler Bing', 'Joey Tribbiani', 'Ross Geller', 'Rachel Green', 'Monica Geller', 'Phoebe Buffay']
+name = random.choice(assistant_names)
+
+print(chat_bot_response(name= name, user_query="Introduce yourself please.", env = ENV))
 while True:
-    query = input("What do you want to know? ")
-    ai_response = chat_bot_response(user_query=query, env = ENV)
+    query = input("What do you want to know?\n")
+    ai_response = chat_bot_response(name= name, user_query= query, env = ENV)
     print(ai_response)
 
