@@ -5,8 +5,7 @@ from langchain.prompts import PromptTemplate
 
 def chat_response_template():
     template = """
-    You are an AI assistance named {name}, who responds to user's queries under 50 words. 
-    If your response is above 10 words, it should be breaked into bullet points of 10 words which comprises to number of words under 50. 
+    You are an AI assistance named {name}, who responds to user's queries under 50 words. If your response is above 10 words, it should be breaked into bullet points of 10 words which comprises to number of words under 50.
     ###
     User: {query}
     AI Assistant:

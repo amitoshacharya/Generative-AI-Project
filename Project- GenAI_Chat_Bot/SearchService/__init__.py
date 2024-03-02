@@ -40,7 +40,7 @@ def chat_bot(env:str= 'local'):
 
     return bot_llm
 
-def chat_bot_response(name:str=None, user_query:str= None, env:str= 'local'):
+def chat_bot_response(chat_history:list=[], name:str=None, user_query:str= None, env:str= 'local'):
     """
     This function creates a chain using llm model and prompt template. 
 
