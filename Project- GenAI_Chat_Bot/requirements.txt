@@ -2,12 +2,15 @@ beautifulsoup4
 langchain
 langchain-community
 nltk
+fastapi
 numpy
 openai
 pandas
+pydantic
 pypdf
 python-dotenv
 regex
 requests
 streamlit
 touch
+uvicorn
