@@ -2,22 +2,28 @@
 - ## **OBJECTIVE** *(Version Categorize)*
     - V1
         - Create a streamlit app which is a chatbot.
-        - This chatbot takes user's querie and process to generate responses under 50 words.
+        - This chatbot takes user's queries and process to generate responses under 50 words.
         - Chatbot response should be breaked into bullet points for better understanding.
 
 - ## Project Stage Description
     - ### **Streamlit APIs**
-        - *app.py*
+        - *WebApp*
             - *Streamlit multipages WebAPI.*
             - *This WebAPI is an interactive user interface (UI) which connect frontend users to backened processing Large Language Model (LLM).*
+            - *chat_bot.py*
+                - Home Page
+                - Takes user's query and respond back to the user.
 
     - ### **Chat Bot**
         - *SearchService*
             - *This is a backened functions that search for the response to user's asked queries.*
 
-    - **utils**
+    - ### **utils**
         - *prompt_template.py*
             - *This is a backened functions that sets-up prompts for LLM model.*
+    
+    - ### **main function**
+        - A Fast-API app that work as an interface between Frontend and Backend.
 
     
 
@@ -42,6 +48,12 @@
             > *touch xyz/\__init__.py*
         - Now we can import xyz module in *app.py*
             > *import xyx*
-        
-    
 
+    - ### **Code Execution**
+        - To Execute Streamlit API
+            > *streamlit run WebApp/chat_bot.py*
+        - To Execute Main Function
+            >  *python main.py*
+
+    - ### **To Terminate**
+        - > ***CTRL+C***
