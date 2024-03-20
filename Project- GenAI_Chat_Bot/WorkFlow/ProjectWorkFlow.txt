@@ -1,16 +1,34 @@
-WebAPI
-Python File: app.py 
-Description: This WebAPI is an user interactive (UI) interface 
+(1) WebApp
+
+(2.1) ChatBOT
+Python File: chat_bot.py 
+Description: This WebApp functionality/page is an user interactive (UI) interface 
              which connect frontend users to backened processing LLM.
+Execution cmd: "streamlit run WebApp/chat_bot.py"
 --
++ UserInput (string): User Query
+
+
+(3.1) Fast API app
+Python File: main.py
+Description: This is an interface between Frontend (WenAPI) and Backend.
+Execution cmd: "python main.py"
+--
+- PORT (integer): 8504
+- ENV (string): Working environment for LLM. Here, possible values are azure and local
+
+
+(4.1) Search Service (CLICK to follow)
+Python Folder: SearchService
+Decription: This contain LLM model to process user query and generate response to Fast API.
+Execution cmd: "from SearchService import chat_bot_response"
 
 
 
 
 ABBREVIATIONS
+Web Application
 Functionality
-WebAPI
-Pages
 Backend Functions
 - Private Variable (Not for frontend user)
 + Public Variable (For frontend user)

@@ -11,6 +11,8 @@ from utils import chat_response_template
 def chat_bot(env:str= 'local'):
     """
     This function creates a llm model with the required params.
+    Arg:
+        env (str) = 'local' or 'azure'
     """
     if env == "local":
         bot_llm = ChatOpenAI(

@@ -1,3 +1,5 @@
+# **Knowledge Base**
+[github Link](https://github.com/microsoft/generative-ai-for-beginners/tree/main/01-introduction-to-genai)
 # **Project Scenario**
 - ## **OBJECTIVE** *(Version Categorize)*
     - V1
