@@ -21,19 +21,19 @@
     + To reduce dimensionality.
         + E.g.: happy --> [0, 1, 0, 1]
     + To use a word to predict the words around it.
-        + E.g.: \
-        Like --> [0, 1, 0, 1]\
+        + E.g.: 
+        Like --> [0, 1, 0, 1]
         Love --> [0, 1, 0, 1]
         
     + Inter-word semantics must be captured.
-        + E.g.: \
-        I Like you--> \
-        [ [1,0,1,0], [0, 1, 0, 1], [1, 0.7, 1, 0.3] ] \
-        We Love India--> \
+        + E.g.: 
+        I Like you--> 
+        [ [1,0,1,0], [0, 1, 0, 1], [1, 0.7, 1, 0.3] ] 
+        We Love India--> 
         [ [1,0,0,0], [0, 1, 0, 1], [1, 0.5, 1, 0.6] ]
 
 - How are Word Embeddings used?
-    + They are used as input to machine learning models.\
+    + They are used as input to machine learning models.
     
         Take the words —-> Give their numeric representation —-> Use in training or inference.
         
@@ -60,7 +60,7 @@
 3. What are the two types of word embedding?
     - Word embeddings can be broadly evaluated in two categories, [intrinsic and extrinsic](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EDF43F837150B94E71DBB36B28B85E79/S204877031900012Xa.pdf/div-class-title-evaluating-word-embedding-models-methods-and-experimental-results-div.pdf). 
     - For intrinsic evaluation, word embeddings are used to calculate or predict semantic similarity between words, terms, or sentences.
-    - For extrinsic evaluation, word embeddings are used as input features to a downstream task and measure changes in performance metrics specific to that task. \
+    - For extrinsic evaluation, word embeddings are used as input features to a downstream task and measure changes in performance metrics specific to that task. 
     Five extrinsic evaluators: (1) POS tagging, (2) chunking, (3) named-entity recognition, (4) sentiment analysis, and (5) neural machine translation (NMT).
 
 4. How does word vectorization work?
@@ -132,7 +132,7 @@
 
     + Word Embeddings --> Encoder --> Decoder --> Output
 
-- ***How are large language models trained?***\
+- ***How are large language models trained?***
 <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aNf8qJHyrd8zGE199E387g.png">
     + **Pre-training**
         + The first stage is pre-training, this stage requires massive amounts of data to learn to predict the next word. 
@@ -142,7 +142,7 @@
             + Namely, it has learned mainly to ramble on about a topic. 
             + It may even be doing an incredibly good job, but what it doesn't do is respond well to the kind of inputs we would generally expect from AI, such as a question or an instruction.
             + The problem is that this model has not learned to be, and so is not behaving as, an assistant.
-            + *For example*,\
+            + *For example*,
              If you ask a pre-trained LLM "What is your fist name?" it may respond with "What is your last name?" simply because this is the kind of data it has seen during pre-training, as in many empty forms. It's only trying to complete the input sequence.
 
         + At this stage, the LLM is not aligned with human intentions.  
@@ -258,9 +258,9 @@
         + ***Retrieve relevant information***
             + The next step is to perform a relevancy search. 
             + The user query is converted to a vector representation and matched with the vector databases. 
-                + *For example*, \
-                Consider a smart chatbot that can answer human resource questions for an organization. \
-                If an employee searches, "How much annual leave do I have?" the system will retrieve annual leave policy documents alongside the individual employee's past leave record. \
+                + *For example*, 
+                Consider a smart chatbot that can answer human resource questions for an organization. 
+                If an employee searches, "How much annual leave do I have?" the system will retrieve annual leave policy documents alongside the individual employee's past leave record. 
                 These specific documents will be returned because they are highly-relevant to what the employee has input. The relevancy was calculated and established using mathematical vector calculations and representations.
 
         + ***Augment the LLM prompt***
@@ -273,7 +273,7 @@
             + This can be done through automated real-time processes or periodic batch processing. 
             + This is a common challenge in data analytics. Thus, different data-science approaches to change management can be used.
 
-    + *The following diagram shows the conceptual flow of using RAG with LLMs.*\
+    + *The following diagram shows the conceptual flow of using RAG with LLMs.*
     <img src="https://docs.aws.amazon.com/images/sagemaker/latest/dg/images/jumpstart/jumpstart-fm-rag.jpg">
 
 - **Difference between Conventional and Semantic search in RAG**
@@ -282,8 +282,8 @@
         + Context retrieval is challenging at scale and consequently lowers generative output quality.
 
     + *Semantic search technologies can scan large databases of disparate information and retrieve data more accurately*. 
-        + *For example*, \
-        They can answer questions such as, "How much was spent on machinery repairs last year?" by mapping the question to the relevant documents and returning specific text instead of search results. \
+        + *For example*, 
+        They can answer questions such as, "How much was spent on machinery repairs last year?" by mapping the question to the relevant documents and returning specific text instead of search results. 
         Developers can then use that answer to provide more context to the LLM.
 
     + ***Difference*** 
@@ -296,18 +296,18 @@
 
 - RAG is a technique that improves the capabilities of LLMs by combining them with external data sources. 
 - There are three key functionalities of RAG.
-    + **Retrieval** \
+    + **Retrieval** 
     This is where the most relevant information is identified(from the external data).
 
-    + **Augmentation** \
+    + **Augmentation** 
     This step involves preprocessing and analyzing the retrieved information to make it suitable for the LLM using Summarization, Fact Checking and Formatting.
 
-    + **Generation** \
+    + **Generation** 
     With the retrieved and augmented information at end, the LLM generates better in context responses.
 
-- [Retrieval](https://python.langchain.com/v0.1/docs/modules/data_connection/)\
+- [Retrieval](https://python.langchain.com/v0.1/docs/modules/data_connection/)
 <img src="https://python.langchain.com/v0.1/assets/images/data_connection-95ff2033a8faa5f3ba41376c0f6dd32a.jpg" width=auto>
-    + [Document loaders](https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/)\
+    + [Document loaders](https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/)
     <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*UBX8w3Ef-89P-Ezv57L1hw.png" width=auto>
         + Document loaders are tools that play a crucial role in data ingestion. 
         + They take in raw data from different sources and convert them into a structured format called "Documents". 
@@ -324,7 +324,7 @@
         + **Types of Text Splitters**
             + [*Character Text Splitter*](https://python.langchain.com/v0.1/docs/modules/data_connection/document_transformers/character_text_splitter/)
                 + This is the simplest method of splitting the text by characters which is computationally cheap and doesn't require the use of any NLP libraries. 
-                + Here the text split is done on characters (by default "\n\n") and the chunk size is measured by the number of characters.
+                + Here the text split is done on characters (by default "nn") and the chunk size is measured by the number of characters.
                 + The parameter chunk_overlap helps in retaining the semantic context between the chunks. 
                 + The metadata can also be passed along with the documents.
                 + **API Reference:**
@@ -334,7 +334,7 @@
                 + This text splitter is the recommended one for generic text. 
                 + It is parameterized by a list of characters. 
                 + It tries to split on them in order until the chunks are small enough. 
-                + The default list is ["\n\n", "\n", " ", ""]. This has the effect of trying to keep all paragraphs (and then sentences, and then words) together as long as possible, as those would generically seem to be the strongest semantically related pieces of text.
+                + The default list is ["nn", "n", " ", ""]. This has the effect of trying to keep all paragraphs (and then sentences, and then words) together as long as possible, as those would generically seem to be the strongest semantically related pieces of text.
                 + Here the text split is done on the list of characters and the chunk size is measured by the number of characters.
                 + **API Reference:**
                     + RecursiveCharacterTextSplitter
@@ -360,13 +360,13 @@
                 + By focusing on the text's meaning and context, Semantic Chunking significantly enhances the quality of retrieval. 
                 + It's a top-notch choice when maintaining the semantic integrity of the text is vital.
                 + There are 3 different strategies of Semantic Chunking and can be used with breakpoint_threshold_type:
-                    + `percentile` (default) \
+                    + `percentile` (default) 
                     In this method, all differences between sentences are calculated, and then any difference greater than the X percentile is split.
 
-                    + `standard_deviation` \
+                    + `standard_deviation` 
                     In this method, any difference greater than X standard deviations is split.
 
-                    + `interquartile` \
+                    + `interquartile` 
                     In this method, the interquartile distance is used to split chunks.
                 + **API Reference:**
                     + SemanticChunker
@@ -384,19 +384,19 @@
         + The former takes as input multiple texts, while the latter takes a single text. 
         + The reason for having these as two separate methods is that some embedding providers have different embedding methods for documents (to be searched over) vs queries (the search query itself).
     
-    + [Vector Store](https://python.langchain.com/v0.2/docs/how_to/vectorstores/)\
+    + [Vector Store](https://python.langchain.com/v0.2/docs/how_to/vectorstores/)
     <img src="https://python.langchain.com/v0.1/assets/images/vector_stores-125d1675d58cfb46ce9054c9019fea72.jpg">
         + One of the most common ways to store and search over unstructured data is to embed it and store the resulting embedding vectors, and then at query time to embed the unstructured query and retrieve the embedding vectors that are 'most similar' to the embedded query. 
         + A vector store takes care of storing embedded data and performing vector search.
         + A key part of working with vector stores is creating the vector to put in them, which is usually created via embeddings. 
         + There are many great vector store options, here are a few that are free, open-source, and run entirely on your local machine. Review all integrations for many great hosted offerings.
-            + Chroma \
+            + Chroma 
             ***Package Name:*** *langchain_chroma*
 
-            + Facebook AI Similarity Search (FAISS) \
+            + Facebook AI Similarity Search (FAISS) 
             ***Package Name:*** *langchain_community.vectorstores*  
 
-            + Lance \
+            + Lance 
             ***Package Name:*** *langchain_community.vectorstores* and *lancedb*
 
     + [Retriever](https://python.langchain.com/v0.2/docs/how_to/vectorstore_retriever/)
@@ -404,10 +404,10 @@
         + It is a lightweight wrapper around the vector store class to make it conform to the retriever interface. 
         + It uses the search methods implemented by a vector store, like similarity search and MMR, to query the texts in the vector store.
         + Steps to work with Retriever:
-            + *Instantiate a retriever from a vector store* \
+            + *Instantiate a retriever from a vector store* 
             To build a retriever from a vector store using its ***.as_retriever*** method. 
 
-            + *Specify the search type for the retriever* \
+            + *Specify the search type for the retriever* 
                 + By default, the vector store retriever uses similarity search. 
                 + If the underlying vector store supports maximum marginal relevance (mmr) search, specify that as the search type.
                 + This effectively specifies the method on the underlying vector store is used (e.g., similarity_search, max_marginal_relevance_search, etc.).
@@ -417,7 +417,7 @@
                 + ***Similarity score threshold retrieval***
                     + we can set a similarity score threshold. 
                     + only return documents with a score above that threshold.
-                + ***Specifying top k*** \
+                + ***Specifying top k*** 
                 The number of documents can be limit up to **k** returned by the retriever.
 
             + *Example:*
@@ -501,9 +501,9 @@
             + Prompt engineering plays a key role in applications that require the AI to respond with subject matter expertise. 
             + A prompt engineer with experience in the field can guide the AI to reference the correct sources and frame the answer appropriately based on the question asked.
 
-            + *For example*, \
-            In the medical field, a physician could use a prompt-engineered language model to generate differential diagnoses for a complex case. \
-            The medical professional only needs to enter the symptoms and patient details. \
+            + *For example*, 
+            In the medical field, a physician could use a prompt-engineered language model to generate differential diagnoses for a complex case. 
+            The medical professional only needs to enter the symptoms and patient details. 
             The application uses engineered prompts to guide the AI first to list possible diseases associated with the entered symptoms. Then it narrows down the list based on additional patient information.
 
         + *Critical thinking*
@@ -511,16 +511,16 @@
             + To do so, the model analyzes information from different angles, evaluates its credibility, and makes reasoned decisions. 
             + Prompt engineering enhances a model's data analysis capabilities.
 
-            + *For instance*, \
+            + *For instance*, 
             In decision-making scenarios, we could prompt a model to list all possible options, evaluate each option, and recommend the best solution.
 
         + *Creativity*
             + Creativity involves generating new ideas, concepts, or solutions. 
             + Prompt engineering can be used to enhance a model's creative abilities in various scenarios.
 
-            + *For instance*, \
-            In writing scenarios, a writer could use a prompt-engineered model to help generate ideas for a story. \
-            The writer may prompt the model to list possible characters, settings, and plot points then develop a story with those elements. \
+            + *For instance*, 
+            In writing scenarios, a writer could use a prompt-engineered model to help generate ideas for a story. 
+            The writer may prompt the model to list possible characters, settings, and plot points then develop a story with those elements. 
             Or a graphic designer could prompt the model to generate a list of color palettes that evoke a certain emotion then create a design using that palette. 
 
 - [***What are prompt engineering techniques?***](https://github.com/microsoft/generative-ai-for-beginners/tree/main/05-advanced-prompts#techniques-for-prompting)
@@ -542,8 +542,8 @@
             + You can perform several chain-of-thoughts rollout for complex tasks and choose the most commonly reached conclusion. 
             + If the rollout disagree significantly, a person can be consulted to correct the chain of thought.
 
-            + *For example*, \
-            If the question is "What is the capital of France?" the model might perform several rollout leading to answers like "Paris," "The capital of France is Paris," and "Paris is the capital of France." \
+            + *For example*, 
+            If the question is "What is the capital of France?" the model might perform several rollout leading to answers like "Paris," "The capital of France is Paris," and "Paris is the capital of France." 
             Since all rollout lead to the same conclusion, "Paris" would be selected as the final answer.
 
         + `Tree-of-thought prompting`
@@ -551,8 +551,8 @@
             + It prompts the model to generate one or more possible next steps. 
             + Then it runs the model on each possible next step using a tree search method.
 
-            + *For example*, \
-            If the question is "What are the effects of climate change?" the model might first generate possible next steps like "List the environmental effects" and "List the social effects." \
+            + *For example*, 
+            If the question is "What are the effects of climate change?" the model might first generate possible next steps like "List the environmental effects" and "List the social effects." 
             It would then elaborate on each of these in subsequent steps.
 
         + `Maieutic prompting`
@@ -562,16 +562,16 @@
             + Inconsistent explanation trees are pruned or discarded. 
             + This improves performance on complex commonsense reasoning.
 
-            + *For example*, \
-            If the question is "Why is the sky blue?" the model might first answer, "The sky appears blue to the human eye because the short waves of blue light are scattered in all directions by the gases and particles in the Earth's atmosphere." \
+            + *For example*, 
+            If the question is "Why is the sky blue?" the model might first answer, "The sky appears blue to the human eye because the short waves of blue light are scattered in all directions by the gases and particles in the Earth's atmosphere." 
             It might then expand on parts of this explanation, such as why blue light is scattered more than other colors and what the Earth's atmosphere is composed of.
 
         + `Complexity-based prompting`
             + This prompt-engineering technique involves performing several chain-of-thought rollout. 
             + It chooses the rollout with the longest chains of thought then chooses the most commonly reached conclusion.
-            + *For example*, \
-            If the question is a complex math problem, the model might perform several rollout, each involving multiple steps of calculations. \
-            It would consider the rollout with the longest chain of thought, which for this example would be the most steps of calculations. \
+            + *For example*, 
+            If the question is a complex math problem, the model might perform several rollout, each involving multiple steps of calculations. 
+            It would consider the rollout with the longest chain of thought, which for this example would be the most steps of calculations. 
             The rollout that reach a common conclusion with other rollout would be selected as the final answer.
 
         + `Generated knowledge prompting`
@@ -579,48 +579,48 @@
             + Then it proceeds to complete the prompt. 
             + This often results in higher completion quality as the model is conditioned on relevant facts.
 
-            + *For example*, \
-            Imagine a user prompts the model to write an essay on the effects of deforestation. \
-            The model might first generate facts like "deforestation contributes to climate change" and "deforestation leads to loss of biodiversity." \
+            + *For example*, 
+            Imagine a user prompts the model to write an essay on the effects of deforestation. 
+            The model might first generate facts like "deforestation contributes to climate change" and "deforestation leads to loss of biodiversity." 
             Then it would elaborate on the points in the essay.
 
         + `Least-to-most prompting`
             + In this prompt engineering technique, the model is prompted first to list the sub-problems of a problem, and then solve them in sequence. 
             + This approach ensures that later sub-problems can be solved with the help of answers to previous sub-problems.
 
-            + *For example*, \
-            Imagine that a user prompts the model with a math problem like "Solve for x in equation 2x + 3 = 11.". \
-            The model might first list the sub-problems as "Subtract 3 from both sides" and "Divide by 2". \
+            + *For example*, 
+            Imagine that a user prompts the model with a math problem like "Solve for x in equation 2x + 3 = 11.". 
+            The model might first list the sub-problems as "Subtract 3 from both sides" and "Divide by 2". 
             It would then solve them in sequence to get the final answer.
 
         + `Self-refine prompting`
             + In this technique, the model is prompted to solve the problem, critique its solution, and then resolve the problem considering the problem, solution, and critique. 
             + The problem-solving process repeats until it reaches a predetermined reason to stop. *For example*, it could run out of tokens or time, or the model could output a stop token.
 
-            + *For example*, \
-            Imagine a user prompts a model, "Write a short essay on literature." \
-            The model might draft an essay, critique it for lack of specific examples, and rewrite the essay to include specific examples. \
+            + *For example*, 
+            Imagine a user prompts a model, "Write a short essay on literature." 
+            The model might draft an essay, critique it for lack of specific examples, and rewrite the essay to include specific examples. 
             This process would repeat until the essay is deemed satisfactory or a stop criterion is met.
 
         + `Directional-stimulus prompting`
             + This prompt engineering technique includes a hint or cue, such as desired keywords, to guide the language model toward the desired output.
 
-            + *For example*, \
-            If the prompt is to write a poem about love, the prompt engineer may craft prompts that include "heart," "passion," and "eternal." \
-            The model might be prompted, "Write a poem about love that includes the words 'heart,' 'passion,' and 'eternal'." \
+            + *For example*, 
+            If the prompt is to write a poem about love, the prompt engineer may craft prompts that include "heart," "passion," and "eternal." 
+            The model might be prompted, "Write a poem about love that includes the words 'heart,' 'passion,' and 'eternal'." 
             This would guide the model to craft a poem with these keywords.
 
 - [***Prompt Engineering best practices***](https://github.com/microsoft/generative-ai-for-beginners/tree/main/04-prompt-engineering-fundamentals#best-practices)
     + *Unambiguous prompts*
         + Clearly define the desired response in your prompt to avoid misinterpretation by the AI. 
-        + *For instance*, \
-        If you are asking for a novel summary, clearly state that you are looking for a summary, not a detailed analysis. \
+        + *For instance*, 
+        If you are asking for a novel summary, clearly state that you are looking for a summary, not a detailed analysis. 
         This helps the AI to focus only on your request and provide a response that aligns with your objective.
 
     + *Adequate context within the prompt*
         + Provide adequate context within the prompt and include output requirements in your prompt input, confining it to a specific format. 
-        + *For instance*, \
-        Say if we want a list of the most popular movies of the 1990s in a table. \
+        + *For instance*, 
+        Say if we want a list of the most popular movies of the 1990s in a table. 
         To get the exact result, we should explicitly state how many movies we want to be listed and ask for table formatting.
 
     + *Balance between targeted information and desired output*
@@ -639,7 +639,7 @@
     + A prompt template in LangChain is a class that can be used to generate prompts for LLMs. 
     + A prompt is a piece of text that is used to guide the LLM's response. In a High level Prompt templates will give an option to set the context of a LLM response. 
     + Prompt templates can be used to generate prompts for a variety of tasks, such as question answering, summarization, and creative writing.
-    + *For Example,*\
+    + *For Example,*
     <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Pu8c0B2TKm0fMzPYLLjyXw.png" height=300>
 
 ## [Chains](https://python.langchain.com/v0.1/docs/modules/chains/)
@@ -655,7 +655,7 @@
         + *Commonly used Chains :*
             + `create_sql_query_chain` 
                 + [For more details and examples Click Here](https://api.python.langchain.com/en/latest/chains/langchain.chains.sql_database.query.create_sql_query_chain.html#langchain.chains.sql_database.query.create_sql_query_chain)
-                + ***When to use?*** \
+                + ***When to use?*** 
                 To construct a query for a SQL database from natural language.
 
                 + ***Security Note***
@@ -759,7 +759,7 @@
         + One issue with using ALL of the text is that it can be very costly because you are feeding all the texts to OpenAI API and the API is charged by the number of tokens. 
         + A better solution is to retrieve relevant text chunks first and only use the relevant text chunks in the language model. 
         + Available Retrieval chains are:
-            + `ConversationalRetrievalChain` \
+            + `ConversationalRetrievalChain` 
             **ConversationalRetrievalChain** = *conversation memory* + *RetrievalQAChain*
             + `RetrievalQA`
             + `RetrievalQAWithSourcesChain`
@@ -771,19 +771,19 @@
     + The core idea of agents is to use a language model to choose a ***sequence of actions to take***. 
     + ***Sequence of Action***
         + Here are few sample sequence of actions that can be taken (in case of agents) or coded (in case of chains):
-            + *Text generation* \
+            + *Text generation* 
             The agent generates text based on a prompt or input.
-            + *Text processing* \
+            + *Text processing* 
             The agent processes the generated text, such as tokenizing, part-of-speech tagging, or named entity recognition.
-            + *Knowledge retrieval* \
+            + *Knowledge retrieval* 
             The agent retrieves relevant knowledge or information from a database or knowledge graph.
-            + *Reasoning* \
+            + *Reasoning* 
             The agent applies logical or inferential reasoning to the retrieved knowledge.
-            + *Decision-making* \
+            + *Decision-making* 
             The agent makes a decision based on the reasoning step.
-            + *Action execution* \
+            + *Action execution* 
             The agent executes an action, such as sending a message, making a recommendation, or triggering another agent.
-            + *Feedback processing* \
+            + *Feedback processing* 
             The agent processes feedback from the environment or user.
 
     + In chains, a sequence of actions is hardcoded (in code). In agents, a language model (LLM) is used as a reasoning engine to determine which actions to take and in which order.
@@ -812,7 +812,7 @@
                 + A collection of Tools in LangChain are called a Toolkit. 
                 + Implementation wise, this is literally just an array of the Tools that are available for the agent.
     
-    +  ***NOTE:*** \
+    +  ***NOTE:*** 
     *LangChain's [library of Toolkits](https://python.langchain.com/docs/integrations/toolkits/) (like: AINetwork, Azure AI Services, CSV, Gmail, JSON, Jira, Python, SQL Database, Spark SQL etc.)  for agents to use, listed on their Integrations page, are sets of Tools built by the community for people to use, which could be an early example of agent type libraries built by the community.*
 
     + As such, the high level overview of an agent in LangChain looks something like this:
@@ -863,7 +863,7 @@
             + `When to Use:`
                 + *If you are using an OpenAI model, or an open-source model that has been finetuned for function calling and exposes the same functions parameters as OpenAI.*
                 + *Generic Tool Calling agent recommended instead*
-            + `API:` \
+            + `API:` 
             [*langchain.agents.openai_functions_agent.base.create_openai_functions_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.openai_functions_agent.base.create_openai_functions_agent.html)
 
         + [*Tool Calling*](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/tool_calling/)
@@ -874,7 +874,7 @@
             + `Required Model Params:` *tools*
             + `When to Use:`
                 + *If we are using a tool-calling model*
-            + `API:`\
+            + `API:`
             [*langchain.agents.tool_calling_agent.base.create_tool_calling_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.tool_calling_agent.base.create_tool_calling_agent.html)
 
 
@@ -888,7 +888,7 @@
             + `When to Use:`
                 + *If we are using a recent OpenAI model (1106 onwards).* 
                 + *Generic Tool Calling agent recommended instead.*
-            + `API:`\
+            + `API:`
             [*langchain.agents.openai_tools.base.create_openai_tools_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.openai_tools.base.create_openai_tools_agent.html)
 
         + [*XML Agent*](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/xml_agent/)
@@ -896,7 +896,7 @@
             + `Supports Chat History:` *Yes*	
             + `When to Use:`
                 + *If we are using Anthropic models, or other models good at XML.*
-            + `API:`\
+            + `API:`
             [*langchain.agents.xml.base.create_xml_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.xml.base.create_xml_agent.html)
 
         + [*JSON Chat Agent*](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/json_agent/)
@@ -904,7 +904,7 @@
             + `Supports Chat History:` *Yes*
             + `When to Use:`
                 + *If you are using a model good at JSON.*
-            + `API:`\
+            + `API:`
             [*langchain.agents.json_chat.base.create_json_chat_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.json_chat.base.create_json_chat_agent.html)
 
         + [*Structured chat*](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/structured_chat/)
@@ -913,7 +913,7 @@
             + `Supports Multi-Input Tools:` *Yes*
             + `When to Use:`
                 + *If we need to support tools with multiple inputs*
-            + `API:`\
+            + `API:`
             [*langchain.agents.structured_chat.base.create_structured_chat_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.structured_chat.base.create_structured_chat_agent.html)
 
         + [*ReAct agent*](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/react/)
@@ -921,14 +921,14 @@
             + `Supports Chat History:` *Yes*	
             + `When to Use:`
                 + *If we are using a simple model.*
-            + `API:`\
+            + `API:`
             [*langchain.agents.react.agent.create_react_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.react.agent.create_react_agent.html)
 
         + [*Self-ask with search*](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/self_ask_with_search/)
             + `Intended Model Type:` *LLM*	
             + `When to Use:`
                 + *If we are using a simple model and only have one search tool.*
-            + `API:`\
+            + `API:`
             [*langchain.agents.self_ask_with_search.base.create_self_ask_with_search_agent*](https://api.python.langchain.com/en/latest/agents/langchain.agents.self_ask_with_search.base.create_self_ask_with_search_agent.html)
 
 - ***AgentExecutor***
@@ -959,7 +959,7 @@
 
 ## [ReAct Agent](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/react/)
 - [Overview](https://react-lm.github.io/)
-- ***ReAct***- *Synergizing Reasoning and Acting in Language Models*\
+- ***ReAct***- *Synergizing Reasoning and Acting in Language Models*
 <img src=https://react-lm.github.io/files/diagram.png>
 - We can use ReAct agent, 
     + if we are using a simple language model
