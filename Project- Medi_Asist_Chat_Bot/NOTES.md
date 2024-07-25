@@ -640,7 +640,7 @@
     + A prompt is a piece of text that is used to guide the LLM's response. In a High level Prompt templates will give an option to set the context of a LLM response. 
     + Prompt templates can be used to generate prompts for a variety of tasks, such as question answering, summarization, and creative writing.
     + *For Example,*
-    <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Pu8c0B2TKm0fMzPYLLjyXw.png" height=300>
+    <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Pu8c0B2TKm0fMzPYLLjyXw.png" >
 
 ## [Chains](https://python.langchain.com/v0.1/docs/modules/chains/)
 - In simple words, a chain is a sequence of calls, whether those calls are to LLMs, external tools, or data preprocessing steps.
