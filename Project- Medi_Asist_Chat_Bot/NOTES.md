@@ -134,6 +134,7 @@
 
 - ***How are large language models trained?***
 <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aNf8qJHyrd8zGE199E387g.png">
+
     + **Pre-training**
         + The first stage is pre-training, this stage requires massive amounts of data to learn to predict the next word. 
         + In this phase, the model learns not only to master the grammar and syntax of language, but it also acquires a great deal of knowledge about the world, and even some other emerging abilities such as text summarization, Q & A etc.
@@ -307,8 +308,10 @@
 
 - [Retrieval](https://python.langchain.com/v0.1/docs/modules/data_connection/)
 <img src="https://python.langchain.com/v0.1/assets/images/data_connection-95ff2033a8faa5f3ba41376c0f6dd32a.jpg" width=auto>
+
     + [Document loaders](https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/)
     <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*UBX8w3Ef-89P-Ezv57L1hw.png" width=auto>
+
         + Document loaders are tools that play a crucial role in data ingestion. 
         + They take in raw data from different sources and convert them into a structured format called "Documents". 
         + These documents contain the document content as well as the associated metadata like source and timestamps. 
@@ -386,6 +389,7 @@
     
     + [Vector Store](https://python.langchain.com/v0.2/docs/how_to/vectorstores/)
     <img src="https://python.langchain.com/v0.1/assets/images/vector_stores-125d1675d58cfb46ce9054c9019fea72.jpg">
+
         + One of the most common ways to store and search over unstructured data is to embed it and store the resulting embedding vectors, and then at query time to embed the unstructured query and retrieve the embedding vectors that are 'most similar' to the embedded query. 
         + A vector store takes care of storing embedded data and performing vector search.
         + A key part of working with vector stores is creating the vector to put in them, which is usually created via embeddings. 
@@ -818,9 +822,9 @@
     + As such, the high level overview of an agent in LangChain looks something like this:
     <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*Hah4yA9A0rniFn2tEDyNrA.png" width=400 height=300>
 
-        + So, at a basic level, an agent needs
-            + `LLM`, to act as its brain, and to give it its reasoning abilities.
-            + `Tools`, so that it can interact with the environment around it and achieve its goals.
+    + So, at a basic level, an agent needs
+        + `LLM`, to act as its brain, and to give it its reasoning abilities.
+        + `Tools`, so that it can interact with the environment around it and achieve its goals.
 
     + [*Building A Simple Agent*](https://towardsdatascience.com/building-a-simple-agent-with-tools-and-toolkits-in-langchain-77e0f9bd1fa5)
 
