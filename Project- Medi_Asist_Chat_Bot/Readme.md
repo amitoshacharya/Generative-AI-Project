@@ -27,6 +27,9 @@
     ```
     pip install -r requirements.txt
     ```
+## Project Description
+- **Project 1** &rarr; Med-Assist
+- **Objective** &rarr; A user interactive chat bot that helps the user to assist them with there medical emergencies.
 
 ## Project Content
 ### ***Readme***

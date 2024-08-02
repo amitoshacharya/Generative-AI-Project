@@ -117,7 +117,7 @@ def invoke_LLMChain(model, prompt, user_question:str, chat_history:list[tuple]= 
                                   chain_type= "map_reduce",
                                   verbose = verbose
                                   )
-            response = chain({"input_documents": chain_args["input_documents"], "question": user_question},
+            response = chain.invoke({"input_documents": chain_args["input_documents"], "question": user_question},
                                     return_only_outputs=True)
             
           
