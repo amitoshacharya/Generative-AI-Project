@@ -67,3 +67,6 @@
 
 ### ***main_agents***
 - This file is used to test the LangChain Agents for the user query.
+
+### ***main copy***
+- This file is used to test the LangChain Chains for the user query with chain type map_reduce.

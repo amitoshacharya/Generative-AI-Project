@@ -2,6 +2,7 @@
 
 from langchain_core.prompts.prompt import PromptTemplate
 from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain
+from langchain.chains.question_answering import load_qa_chain
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import RetrievalQA, RetrievalQAWithSourcesChain, ConversationalRetrievalChain
 from langchain.tools.retriever import create_retriever_tool
@@ -34,6 +35,7 @@ def invoke_LLMChain(model, prompt, user_question:str, chat_history:list[tuple]= 
                                     If "RetrievalQA": QA over `retrieved documents`, for this retriever is required.
                                     If "RetrievalQAWithSourcesChain": QA over `retrieved documents`, for this retriever is required and `Answer Response from llm` include sources.
                                     If "ConversationalRetrievalChain": QA over `retrieved documents` and ongoing chat conversation (chat_history), for this retriever is required.
+                                    If "load_qa_chain": If huge documents are there, then use this chain to load the documents and answer the question.
         verbose (bool, optional): Verbose. Defaults to False.
 
     Returns:
@@ -109,6 +111,14 @@ def invoke_LLMChain(model, prompt, user_question:str, chat_history:list[tuple]= 
                                                             verbose= verbose
                                                             )
             response = chain.invoke({"question":user_question, "chat_history": chat_history})
+
+        elif llm_chain == "load_qa_chain":
+            chain = load_qa_chain(llm = model,
+                                  chain_type= "map_reduce",
+                                  verbose = verbose
+                                  )
+            response = chain({"input_documents": chain_args["input_documents"], "question": user_question},
+                                    return_only_outputs=True)
             
           
         return {"llm_chain": llm_chain, "response": response}
@@ -137,5 +147,7 @@ def get_retriever_agent(as_retriever, tool_name, tool_description,):
     
     ## Creating Agent Component: Agent
     # agent = 
+    
+
 
     # return agent       
