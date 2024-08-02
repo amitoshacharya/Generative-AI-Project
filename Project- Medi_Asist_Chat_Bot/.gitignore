@@ -1,0 +1,4 @@
+chatvenv
+*.dio
+*.drawio
+.env
