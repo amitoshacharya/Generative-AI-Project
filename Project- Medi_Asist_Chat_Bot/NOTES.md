@@ -769,6 +769,65 @@
             + `RetrievalQAWithSourcesChain`
             + `load_qa_with_sources_chain`
 
+- [StackOverFlow RetrievalQA Example](https://stackoverflow.com/questions/77521745/map-reduce-prompt-with-retrievalqa-chain)
+    ```python
+    qa_template = """
+    Use the following information from the context (separated with <ctx></ctx>) to answer the question.
+    Answer in German only, because the user does not understand English! \
+    If you don't know the answer, answer with "Unfortunately, I don't have the information." \
+    If you don't find enough information below, also answer with "Unfortunately, I don't have the information." \
+    ------
+    <ctx>
+    {context}
+    </ctx>
+    ------
+    <hs>
+    {chat_history}
+    </hs>
+    ------
+    {question}
+    Answer:
+    """
+
+    prompt = PromptTemplate(template=qa_template,
+                                input_variables=['context','history', 'question'])
+    combine_custom_prompt='''
+    Generate a summary of the following text that includes the following elements:
+
+    * A title that accurately reflects the content of the text.
+    * An introduction paragraph that provides an overview of the topic.
+    * Bullet points that list the key points of the text.
+    * A conclusion paragraph that summarizes the main points of the text.
+
+    Text:`{context}`
+    '''
+
+
+    combine_prompt_template = PromptTemplate(
+        template=combine_custom_prompt, 
+        input_variables=['context']
+    )
+
+    chain_type_kwargs={
+            "verbose": True,
+            "question_prompt": prompt,
+            "combine_prompt": combine_prompt_template,
+            "combine_document_variable_name": "context",
+            "memory": ConversationSummaryMemory(
+                llm=OpenAI(),
+                memory_key="history",
+                input_key="question",
+                return_messages=True)}
+
+
+    refine = RetrievalQA.from_chain_type(llm=OpenAI(),
+                                        chain_type="map_reduce",
+                                        return_source_documents=True,
+                                        chain_type_kwargs=chain_type_kwargs,
+                                        retriever=big_chunks_retriever,
+                                        verbose=True)
+    ```
+
 ## [Agents](https://python.langchain.com/v0.1/docs/modules/agents/)
 - [YouTube video](https://youtu.be/cQUUkZnyoD0?t=2717)
 - [***What are Agents?***]((https://towardsdatascience.com/building-a-simple-agent-with-tools-and-toolkits-in-langchain-77e0f9bd1fa5))
