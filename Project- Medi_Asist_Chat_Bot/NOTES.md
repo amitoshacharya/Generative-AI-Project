@@ -769,7 +769,7 @@
             + `RetrievalQAWithSourcesChain`
             + `load_qa_with_sources_chain`
 
-- [StackOverFlow RetrievalQA Example](https://stackoverflow.com/questions/77521745/map-reduce-prompt-with-retrievalqa-chain)
+- [StackOverFlow RetrievalQA Example](https://stackoverflow.com/questions/77521745/map-reduce-prompt-with-retrievalqa-chain) or [web_page_summerizer](/workspaces/Generative-AI-Project/GenAI- Learning/web_tool_summerizer copy.ipynb)
     ```python
     qa_template = """
     Use the following information from the context (separated with <ctx></ctx>) to answer the question.
