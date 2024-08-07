@@ -1024,8 +1024,9 @@
 - [Overview](https://react-lm.github.io/)
 - ***ReAct***- *Synergizing Reasoning and Acting in Language Models*
 <img src=https://react-lm.github.io/files/diagram.png>
+
 - We can use ReAct agent, 
     + if we are using a simple language model
-    + And also, if we are looking for agent that supports chat history.
+    + and also, if we are looking for agent that supports chat history.
 - 
 
