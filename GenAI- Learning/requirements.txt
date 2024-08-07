@@ -4,6 +4,7 @@ langchain
 langchain-community==0.0.20
 langchain-core==0.1.23
 langchain_experimental
+langchainhub
 langchain-openai==0.0.6
 langsmith==0.0.87
 llama-index

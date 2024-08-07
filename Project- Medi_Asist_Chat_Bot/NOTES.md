@@ -1028,5 +1028,135 @@
 - We can use ReAct agent, 
     + if we are using a simple language model
     + and also, if we are looking for agent that supports chat history.
-- 
+- **Steps to implement ReAct Agent involves:** *Note the [Use Case considered below is using GenAI over SQl Database.](https://github.com/amitoshacharya/Generative-AI-Project/blob/main/GenAI-%20Learning/sql_chain_%26_agent_explore.ipynb)*
+
+    + `Defining Large Language Model (LLM)`
+        + Here, defining AzureChatOpenAI
+
+        ```python
+        from langchain_openai import AzureChatOpenAI
+
+        llm = AzureChatOpenAI(model = OPENAI_MODEL,
+                              azure_deployment = OPENAI_DEPLOYMENT,
+                              azure_endpoint = OPENAI_ENDPOINT,
+                              api_version = OPENAI_API_VERSION,
+                              api_key = OPENAI_API_KEY,
+                              temperature = 0
+                            )
+        ```
+
+    + `Difining Data Connection`
+        + [***Dialect***](https://docs.sqlalchemy.org/en/13/dialects/index.html)
+            + The **dialect** is the system SQLAlchemy uses to communicate with various types of DBAPI implementations and databases.
+            + *Included Dialects* &#8594; `PostgreSQL`, `MySQL`, `SQLite`, `Oracle`, `Microsoft SQL Server`
+            + *External Dialects* &#8594; `Amazon Redshift (via psycopg2)`, `Apache Drill`, `Apache Druid`, `Apache Hive and Presto`, `Apache Solr`, `Google BigQuery`, `SAP Hana`, `Snowflake`, .. etc.
+
+        + ***Table Info***
+            + Information about all tables in the database.
+
+            ```python
+            from langchain_community.utilities import SQLDatabase
+
+            ## data_base_uri this is the uri of the SQL db. And is combination of 'dialect' and 'db_path'
+            db = SQLDatabase.from_uri(database_uri = f"sqlite:///{data_base_path}")
+            ```
+
+    + `Initialize Toolkit or list of Tools`
+
+        ```python
+        from langchain_community.agent_toolkits import SQLDatabaseToolkit
+
+        toolkit = SQLDatabaseToolkit(llm = llm, db = db)
+        sql_tools = toolkit.get_tools()
+        ```
+
+    + `Prompt Engineering`
+        + We can create custom prompt.
+
+            ```python
+            from langchain_core.prompts import PromptTemplate
+
+            template = """
+            You are an AI agent, designed to interact with the SQL database. You are an agent that does a reasoning step before the acting. Given an input question, create a syntactically correct dialect query to run, then look at the results of the query and return the answer. Unless the user specifies a specific number of examples they wish to obtain, always limit your query to at most 5 results. You can order the results by a relevant column to return the most interesting examples in the database. Never query for all the columns from a specific table, only ask for the relevant columns given the question. You have access to tools for interacting with the database. Only use the below tools. Only use the information returned by the below tools to construct your final answer. You MUST double check your query before executing it. If you get an error while executing a query, rewrite the query and try again. DO NOT make any DML statements (INSERT, UPDATE, DELETE, DROP etc.) to the database. If the question does not seem related to the database, just return "I am Sorry, I only answer questions related to the database" as the answer. If you come across the Final Answer immediately stop Thought, Action Process and return the answer framing a very good sentence. 
+            
+            Answer the following questions as best you can. You have access to the following tools: {tools}  
+
+            Use the following format:  
+            Question: the input question you must answer 
+            Thought: you should always think about what to do 
+            Action: the action to take, should be one of [{tool_names}] 
+            Action Input: the input to the action 
+            Observation: the result of the action ... (this Thought/Action/Action Input/Observation can repeat N times) 
+            Final Thought: I now know the final answer 
+            Final Answer: the final answer to the original input question  
+
+            Begin!  
+
+            Question: {input} 
+            Thought:{agent_scratchpad}
+            """
+
+            prompt = PromptTemplate(template = template, input_variables = ['agent_scratchpad', 'input', 'tool_names', 'tools'])
+            ```
+        
+        + We can also pull existing prompts from [Langchain Hub](https://docs.smith.langchain.com/how_to_guides/prompts/langchain_hub).
+            + Hub is a collection of pre-existing prompt.
+            + Here you'll find all of the publicly listed prompts in the LangChain Hub. You can search for prompts by name, handle, use cases, descriptions, or models.
+            + Langchain Hub &#8594; [Click here](https://smith.langchain.com/hub)
+
+            ```python
+            from langachain import hub
+
+            prompt = hub.pull("sharsha315/custom_react_sql_agent")
+            ```
+
+    + `Create Agent`
+        + Here, we are creating a ReAct Agent
+
+            ```python
+            from langchain.agents import create_react_agent
+
+            agent = create_react_agent(llm =llm, tools = sql_tools, prompt = prompt)
+            ```
+
+    + `Run Agent` &#8594; *AgentExecutor*
+        + The agent executor is the runtime for an agent. 
+        + This is what actually calls the agent, executes the actions it chooses, passes the action outputs back to the agent, and repeats.
+        + Set ***verbose*** to *True*, so we can get an idea of what the agent is doing as it is processing our request.
+        + **Important Note:** 
+            + When interacting with agents it is really important to set the ***max_iterations*** parameters because agents can get stuck in infinite loops that consume plenty of tokens. 
+            + The <ins>default value is **15**</ins> to allow for many tools and complex reasoning but for most applications you should keep it much lower.
+
+                ```python
+                from langchain.agents import AgentExecutor
+
+                agent_executor = AgentExecutor(agent=agent, 
+                                            tools= sql_tools,
+                                            verbose=True, 
+                                            handle_parsing_errors=True,
+                                            max_iterations=15)
+
+                question = f"What are the records under 'Home Appliances' category of table name - '{table_name}' got sold in Dec 2019." +\
+                "Return following columns only: id, date of order, category of product, product, time they order and there address." +\
+                "Return the results in Table format."
+                
+                result = agent_executor.invoke({"input":question})
+                ```
+        
+        + ***Using with chat history***
+
+            ```python
+            result = agent_executor.invoke({
+                                                "input": "what's my name? Only use a tool if needed, otherwise respond with Final Answer",
+                                                # Notice that chat_history is a string, since this prompt is aimed at LLMs, not chat models
+                                                "chat_history": "Human: Hi! My name is Bob\nAI: Hello Bob! Nice to meet you",
+                                            }
+                                        )
+            ```
+        
+- [**Dealing with high-cardinality columns**](https://python.langchain.com/v0.2/docs/tutorials/sql_qa/#dealing-with-high-cardinality-columns)
+
+    
+        
+
 
