@@ -1030,7 +1030,7 @@
     + and also, if we are looking for agent that supports chat history.
 - **Steps to implement ReAct Agent involves:** *Note the [Use Case considered below is using GenAI over SQl Database.](https://github.com/amitoshacharya/Generative-AI-Project/blob/main/GenAI-%20Learning/sql_chain_%26_agent_explore.ipynb)*
 
-    + `Defining Large Language Model (LLM)`
+    + **`Defining Large Language Model (LLM)`**
         + Here, defining AzureChatOpenAI
 
         ```python
@@ -1045,7 +1045,7 @@
                             )
         ```
 
-    + `Difining Data Connection`
+    + **`Difining Data Connection`**
         + [***Dialect***](https://docs.sqlalchemy.org/en/13/dialects/index.html)
             + The **dialect** is the system SQLAlchemy uses to communicate with various types of DBAPI implementations and databases.
             + *Included Dialects* &#8594; `PostgreSQL`, `MySQL`, `SQLite`, `Oracle`, `Microsoft SQL Server`
@@ -1061,7 +1061,7 @@
             db = SQLDatabase.from_uri(database_uri = f"sqlite:///{data_base_path}")
             ```
 
-    + `Initialize Toolkit or list of Tools`
+    + **`Initialize Toolkit or list of Tools`**
 
         ```python
         from langchain_community.agent_toolkits import SQLDatabaseToolkit
@@ -1070,7 +1070,7 @@
         sql_tools = toolkit.get_tools()
         ```
 
-    + `Prompt Engineering`
+    + **`Prompt Engineering`**
         + We can create custom prompt.
 
             ```python
@@ -1110,7 +1110,7 @@
             prompt = hub.pull("sharsha315/custom_react_sql_agent")
             ```
 
-    + `Create Agent`
+    + **`Create Agent`**
         + Here, we are creating a ReAct Agent
 
             ```python
@@ -1119,7 +1119,7 @@
             agent = create_react_agent(llm =llm, tools = sql_tools, prompt = prompt)
             ```
 
-    + `Run Agent` &#8594; *AgentExecutor*
+    + **`Run Agent`** &#8594; *AgentExecutor*
         + The agent executor is the runtime for an agent. 
         + This is what actually calls the agent, executes the actions it chooses, passes the action outputs back to the agent, and repeats.
         + Set ***verbose*** to *True*, so we can get an idea of what the agent is doing as it is processing our request.
