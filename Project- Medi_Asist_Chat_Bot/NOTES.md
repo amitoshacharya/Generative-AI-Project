@@ -304,8 +304,7 @@
     + **Generation** 
     With the retrieved and augmented information at end, the LLM generates better in context responses.
 
-- [Retrieval](https://python.langchain.com/v0.1/docs/modules/data_connection/)
-<img src="https://python.langchain.com/v0.1/assets/images/data_connection-95ff2033a8faa5f3ba41376c0f6dd32a.jpg" width=auto>
+- [Retrieval](https://python.langchain.com/v0.1/docs/modules/data_connection/)<img src="https://python.langchain.com/v0.1/assets/images/data_connection-95ff2033a8faa5f3ba41376c0f6dd32a.jpg" width=auto>
 
     + [Document loaders](https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/)
     <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*UBX8w3Ef-89P-Ezv57L1hw.png" width=auto>
