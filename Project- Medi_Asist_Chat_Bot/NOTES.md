@@ -135,7 +135,7 @@
 - ***How are large language models trained?***
 <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aNf8qJHyrd8zGE199E387g.png">
 
-    + **Pre-training**
+    - **Pre-training**
         + The first stage is pre-training, this stage requires massive amounts of data to learn to predict the next word. 
         + In this phase, the model learns not only to master the grammar and syntax of language, but it also acquires a great deal of knowledge about the world, and even some other emerging abilities such as text summarization, Q & A etc.
         + ***What might be the problem with this kind of pre-training?***
@@ -149,13 +149,13 @@
         + At this stage, the LLM is not aligned with human intentions.  
         + Alignment is an important topic for LLMs. So even though initially they don't respond well to instructions, they can be taught to do so.
 
-    + **Instruction fine-tuning**
+    - **Instruction fine-tuning**
         + This is where instruction tuning comes in. We take the pre-trained LLM with its current abilities and do essentially what we did before — i.e., learn to predict one word at a time — but now we do this using only high-quality instruction and response pairs as our training data.
         + That way, the model un-learns to simply be a text completer and learns to become a helpful assistant that follows instructions and responds in a way that is aligned with the user's intention. 
         + The size of this instruction dataset is typically a lot smaller than the pre-training set. This is because the high-quality instruction-response pairs are much more expensive to create as they are typically sourced from humans. 
         + This is very different from the inexpensive self-supervised labels we used in pre-training. This is why this stage is also called ***supervised instruction fine-tuning***.
     
-    + **RLHF**
+    - **RLHF**
         + There is also a third stage that some LLMs like ChatGPT go through, which is **reinforcement learning from human feedback (RLHF)**. 
         + It's purpose is similar to instruction fine-tuning. RLHF also helps alignment and ensures that the LLM's output reflects human values and preferences. 
         + There is some early research that indicates that this stage is critical for reaching or surpassing human-level performance. 
@@ -165,10 +165,10 @@
     + ***Zero-shot learning*** 
         + Base LLMs can respond to a broad range of requests without explicit training, often through prompts, although answer accuracy varies.
 
-    + ***Few-shot learning***
+    - ***Few-shot learning***
         + By providing a few relevant training examples, base model performance significantly improves in that specific area.
 
-    + ***Fine-tuning***
+    - ***Fine-tuning***
         + This is an extension of few-shot learning and a process that leverages transfer learning to 'adapt' the model to a downstream task or to solve a specific problem. 
         + Differently from few-shot learning and RAG, it results in a new model being generated, with updated weights and biases. 
         + It requires a set of training examples consisting of a single input (the prompt) and its associated output (the completion). 
