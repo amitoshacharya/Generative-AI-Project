@@ -272,8 +272,7 @@
             + This can be done through automated real-time processes or periodic batch processing. 
             + This is a common challenge in data analytics. Thus, different data-science approaches to change management can be used.
 
-    + *The following diagram shows the conceptual flow of using RAG with LLMs.*
-    <img src="https://docs.aws.amazon.com/images/sagemaker/latest/dg/images/jumpstart/jumpstart-fm-rag.jpg">
+    + *The following diagram shows the conceptual flow of using RAG with LLMs.* <img src="https://docs.aws.amazon.com/images/sagemaker/latest/dg/images/jumpstart/jumpstart-fm-rag.jpg">
 
 - **Difference between Conventional and Semantic search in RAG**
     + *Semantic search enhances RAG results for organizations wanting to add vast external knowledge sources to their LLM applications.* 
@@ -306,8 +305,7 @@
 
 - [Retrieval](https://python.langchain.com/v0.1/docs/modules/data_connection/)<img src="https://python.langchain.com/v0.1/assets/images/data_connection-95ff2033a8faa5f3ba41376c0f6dd32a.jpg" width=auto>
 
-    + [Document loaders](https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/)
-    <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*UBX8w3Ef-89P-Ezv57L1hw.png" width=auto>
+    + [Document loaders](https://python.langchain.com/v0.1/docs/modules/data_connection/document_loaders/)<img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*UBX8w3Ef-89P-Ezv57L1hw.png" width=auto>
 
         + Document loaders are tools that play a crucial role in data ingestion. 
         + They take in raw data from different sources and convert them into a structured format called "Documents". 
@@ -384,8 +382,7 @@
         + The former takes as input multiple texts, while the latter takes a single text. 
         + The reason for having these as two separate methods is that some embedding providers have different embedding methods for documents (to be searched over) vs queries (the search query itself).
     
-    + [Vector Store](https://python.langchain.com/v0.2/docs/how_to/vectorstores/)
-    <img src="https://python.langchain.com/v0.1/assets/images/vector_stores-125d1675d58cfb46ce9054c9019fea72.jpg">
+    + [Vector Store](https://python.langchain.com/v0.2/docs/how_to/vectorstores/)<img src="https://python.langchain.com/v0.1/assets/images/vector_stores-125d1675d58cfb46ce9054c9019fea72.jpg">
 
         + One of the most common ways to store and search over unstructured data is to embed it and store the resulting embedding vectors, and then at query time to embed the unstructured query and retrieve the embedding vectors that are 'most similar' to the embedded query. 
         + A vector store takes care of storing embedded data and performing vector search.
@@ -640,8 +637,7 @@
     + A prompt template in LangChain is a class that can be used to generate prompts for LLMs. 
     + A prompt is a piece of text that is used to guide the LLM's response. In a High level Prompt templates will give an option to set the context of a LLM response. 
     + Prompt templates can be used to generate prompts for a variety of tasks, such as question answering, summarization, and creative writing.
-    + *For Example,*
-    <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Pu8c0B2TKm0fMzPYLLjyXw.png" >
+    + *For Example,* <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Pu8c0B2TKm0fMzPYLLjyXw.png" >
 
 ## [Chains](https://python.langchain.com/v0.1/docs/modules/chains/)
 - In simple words, a chain is a sequence of calls, whether those calls are to LLMs, external tools, or data preprocessing steps.
@@ -875,8 +871,7 @@
     +  ***NOTE:*** 
     *LangChain's [library of Toolkits](https://python.langchain.com/docs/integrations/toolkits/) (like: AINetwork, Azure AI Services, CSV, Gmail, JSON, Jira, Python, SQL Database, Spark SQL etc.)  for agents to use, listed on their Integrations page, are sets of Tools built by the community for people to use, which could be an early example of agent type libraries built by the community.*
 
-    + As such, the high level overview of an agent in LangChain looks something like this:
-    <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*Hah4yA9A0rniFn2tEDyNrA.png" width=400 height=300>
+    + As such, the high level overview of an agent in LangChain looks something like this: <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*Hah4yA9A0rniFn2tEDyNrA.png" width=400 height=300>
 
     + So, at a basic level, an agent needs
         + `LLM`, to act as its brain, and to give it its reasoning abilities.
@@ -1019,8 +1014,7 @@
 
 ## [ReAct Agent](https://python.langchain.com/v0.1/docs/modules/agents/agent_types/react/)
 - [Overview](https://react-lm.github.io/)
-- ***ReAct***- *Synergizing Reasoning and Acting in Language Models*
-<img src=https://react-lm.github.io/files/diagram.png>
+- ***ReAct***- *Synergizing Reasoning and Acting in Language Models* <img src=https://react-lm.github.io/files/diagram.png>
 
 - We can use ReAct agent, 
     + if we are using a simple language model
